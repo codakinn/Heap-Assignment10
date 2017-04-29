@@ -5,21 +5,22 @@
 #include <iostream>
 using namespace std;
 
-template <type T>
+template <class T>
 class heap {
  private:
   vector<T> buffer;
-  void insertHelper(int current){
+  void insertHelper(int value, int current){
    while(buffer[current] != buffer.front())
     if(buffer[current] > buffer[(current-1)/2]){
       T temp = buffer[current];
-      buffer[current] = buffer[(current-1)/2])
+      buffer[current] = buffer[(current-1)/2];
       buffer[(current-1)/2] = temp;
       insertHelper(value, (current-1)/2);
-    }       
+    }
   }
- 
+
  void removeHelper(int current){
+     int temp;
       T *c1 = buffer[2*current +1];
       T *c2 = buffer[2*(current+1)];
       T *parent = buffer[current];
@@ -52,16 +53,16 @@ class heap {
        }
       }
  }
-  
+
  public:
   heap(){
     buffer.clear();
   }
- 
+
   int size(){
     return buffer.size();
   }
- 
+
   void insert(T value){
    if(buffer.empty())
      buffer.push_back(value);
@@ -70,7 +71,7 @@ class heap {
      insertHelper(value, size - 1);
    }
   }
- 
+
   void remove_max(){
      if(!buffer.empty()){
       int current = 0;
@@ -84,10 +85,11 @@ class heap {
     return buffer.front();
   }
   void print(){
-    vector<T>::const_iterator = i
+    int i;
+    vector<T>::const_iterator = i;
     for(i = 0; i < buffer.size(); i++)
      cout << i << " - " << buffer[i] << endl;
-    
+
   }
 };
 
