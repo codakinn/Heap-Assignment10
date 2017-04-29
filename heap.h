@@ -21,9 +21,9 @@ class heap {
 
  void removeHelper(int current){
      int temp;
-      T *c1 = buffer[2*current +1];
-      T *c2 = buffer[2*(current+1)];
-      T *parent = buffer[current];
+      T c1 = buffer[2*current +1];
+      T c2 = buffer[2*(current+1)];
+      T parent = buffer[current];
       if(parent < c1 && parent < c2){
        if(c1 < c2){
         temp = parent;
