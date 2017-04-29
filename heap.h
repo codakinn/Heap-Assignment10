@@ -67,8 +67,8 @@ class heap {
    if(buffer.empty())
      buffer.push_back(value);
    else{
-     buffer.insert(value);
-     insertHelper(value, size - 1);
+     //buffer.insert(value);
+     insertHelper(value, buffer.size() - 1);
    }
   }
 
@@ -86,7 +86,7 @@ class heap {
   }
   void print(){
     int i;
-    vector<T>::const_iterator = i;
+    //vector<T>::const_iterator i;
     for(i = 0; i < buffer.size(); i++)
      cout << i << " - " << buffer[i] << endl;
 
